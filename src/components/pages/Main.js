@@ -14,9 +14,9 @@ export default function Main2() {
   };
 
   return (
-    <div className="h-screen bg-bglight flex flex-col justify-center text-4xl select-none">
-      <div className="self-center">
-        <div className="flex">
+    <div className="h-screen bg-bglight flex flex-col justify-center text-xl md:text-4xl select-none">
+      <div className="self-center p-2 m-2">
+        <div className="flex px-2 py-1">
           <div
             className={`${
               firstTransition ? "text-function italic" : "text-white"
