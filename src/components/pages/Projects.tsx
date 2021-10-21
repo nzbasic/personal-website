@@ -22,8 +22,6 @@ export const Projects = () => {
                     <span className="text-7xl text-function my-10">Projects</span>
                     <span className="w-8"></span>
                 </div>
-
-                
                 {projectsData.map(item => (
                     <Project data={item} />
                 ))}

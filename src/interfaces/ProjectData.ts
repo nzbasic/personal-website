@@ -5,7 +5,8 @@ export interface ProjectData {
     uni?: boolean,
     technologies?: string[],
     users?: string,
-    link: string,
+    link?: string,
+    repo: string,
     longDescription?: string,
     features?: string[],
     screenshots?: Screenshot[]
