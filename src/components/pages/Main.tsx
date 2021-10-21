@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { MenuButton } from "../atoms/MenuButton";
 import Typist from "react-typist";
 import "../../css/Main.css";
-// @ts-ignore
 import CV from  "../../jamescvnophone.pdf"; 
 
 export const Main = () => {
@@ -37,7 +36,7 @@ export const Main = () => {
         <div className={`${secondTransition ? "block" : "invisible"}`}>
           <Typist startDelay={2500} cursor={{ hideWhenDone: true, hideWhenDoneDelay: 500 }}>
             <span className="text-keyword pl-6">return (</span><br></br>
-            <MenuButton onClick={() => window.open("https://github.com/nzbasic?tab=repositories", "_blank")}>&#60;Projects /&#62;</MenuButton><br></br>
+            <MenuButton onClick={() => window.location.href='/projects'}>&#60;Projects /&#62;</MenuButton><br></br>
             <MenuButton onClick={() => window.open(CV)}>&#60;Resume /&#62;</MenuButton><br></br>
             <span className="text-keyword pl-6">)</span>
             <span className="text-white">;</span>

@@ -1,0 +1,97 @@
+[
+    {
+        "name": "Collection Helper",
+        "icon": "https://user-images.githubusercontent.com/54062686/125156185-54ed4500-e1b8-11eb-8051-2f4b981eb542.png",
+        "description": "Standalone, feature-rich, beautiful collection manager for osu! ",
+        "technologies": [
+            "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
+            "https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white",
+            "https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=9FEAF9",
+            "https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white",
+            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
+        ],
+        "users": "1.6k Downloads",
+        "link": "https://github.com/nzbasic/Collection-Helper",
+        "longDescription": "Collection Helper is a tool you can use to manage your collections in osu!. It aims to make editing and sharing your collections quick and easy with its intuitive interface. Included is a very powerful custom filter interface which allows you to programatically filter through your beatmaps by writing your own code.",
+        "features": [
+            "Available in English and Russian (thanks Maks220v for Russian translation)",
+            "Add/remove/merge collections",
+            "Edit collections",
+            "Apply ingame filters to select maps",
+            "Import and Export collections (WIP)",
+            "Ability to create custom filters using javascript",
+            "Inbuilt stream and farm filters",
+            "Backup your collections",
+            "Automatically generate practice difficulties with configurable length"
+        ],
+        "screenshots": [
+            { 
+                "title": "Collections",
+                "link": "https://user-images.githubusercontent.com/54062686/125189725-aa475600-e28d-11eb-883e-29c967157b29.png"
+            },
+            { 
+                "title": "Running custom filter",
+                "link": "https://user-images.githubusercontent.com/54062686/125189778-f1354b80-e28d-11eb-966f-c34f496322de.png"
+            },
+            { 
+                "title": "Collection editing with custom filter applied (Farm)",
+                "link": "https://user-images.githubusercontent.com/54062686/125189812-1d50cc80-e28e-11eb-8a9e-ae700ca479f8.png"
+            },
+            { 
+                "title": "Dark mode",
+                "link": "https://user-images.githubusercontent.com/54062686/127122453-8fc3a7a0-c2b7-4adf-80a4-b5e6ca42e0b9.png"
+            }
+        ]
+    },
+    {
+        "name": "osuTracker",
+        "icon": "https://user-images.githubusercontent.com/54062686/125592488-d5ea3612-3275-4087-8a96-b7651c5630c4.png",
+        "description": "osu! statistics tracker. Currently tracking over 10,000 users and every active country.",
+        "link": "https://osutracker.com",
+        "technologies": [
+            "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
+            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ]
+    },
+    {
+        "name": "snipe.nz",
+        "icon": "https://user-images.githubusercontent.com/54062686/132940622-359c74fe-2b83-4024-82df-822f82267d20.png",
+        "description": "NZ Competitive country #1 leaderboard website and discord bot",
+        "link": "https://snipe.nz",
+        "technologies": [
+            "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
+            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ]
+    },
+    {
+        "name": "Parallel Task Scheduler",
+        "uni": true,
+        "icon": "https://raw.githubusercontent.com/nzbasic/306-Parallel-Task-Scheduler/master/src/main/resources/img/logo/jacketing-no-text%402x.png",
+        "description": "A multithreaded solution for scheduling tasks on multiple computing systems, featuring an interactive visualization. ",
+        "link": "link",
+        "technologies": [
+            "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white",
+            "https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white",
+            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ]
+    },
+    {
+        "name": "Stopwatch",
+        "uni": true,
+        "icon": "https://cdn.discordapp.com/attachments/627267590862929961/900672903870312478/timer_black_24dp1.svg",
+        "description": "A disruptive android application for browsing food and alcohol.",
+        "link": "link",
+        "technologies": [
+            "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white",
+            "https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white",
+            "https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white",
+            "https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"
+        ]
+    }
+]

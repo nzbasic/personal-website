@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
+    "typeRoots": ["./src/types"],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
