@@ -21,13 +21,13 @@ export const Projects = () => {
     }
 
     return (
-        <div className="w-full flex justify-center">
-            <div className="flex flex-col space-y-4 max-w-5xl w-full items-center">
-                <div className="flex justify-between w-full items-center">
+        <div className="w-full flex justify-center pb-4">
+            <div className="flex flex-col space-y-4 md:max-w-5xl px-4 w-full items-center">
+                <div className="flex justify-between w-full items-center my-10">
                     <div className="cursor-pointer hover:bg-gray-600 rounded-md transition delay-75 ease-in w-8" onClick={() => back()}>
                         <ArrowBackIcon fontSize="large" className="text-white" />
                     </div>
-                    <span className="text-7xl text-function my-10">Projects</span>
+                    <span className="md:text-7xl text-function text-5xl">Projects</span>
                     <span className="w-8"></span>
                 </div>
                 {projectsData.map((item, index) => (
