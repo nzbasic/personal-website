@@ -26,7 +26,10 @@ export const Main = () => {
           <div className={`${firstTransition ? "block" : "invisible"}`}>
             <Typist startDelay={1300} cursor={cursor} onTypingDone={() => setSecondTransition(true)}>
               <span className="text-declaration">&nbsp;Coppard</span>
-              <span className="text-bracket">() &#123;</span>
+              <span className="text-keyword ml-2">=</span>
+              <span className="text-bracket ml-2">()</span>
+              <span className="text-function ml-2">⇒</span>
+              <span className="text-bracket ml-2">&#123;</span>
             </Typist>
           </div>
         </div>
