@@ -10,7 +10,7 @@
             "https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white",
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
         ],
-        "users": "1.6k Downloads",
+        "users": "1.6k+ Downloads",
         "link": "https://github.com/nzbasic/Collection-Helper/releases/latest",
         "repo": "https://github.com/nzbasic/Collection-Helper",
         "longDescription": "Collection Helper is a tool you can use to manage your collections in osu!. It aims to make editing and sharing your collections quick and easy with its intuitive interface. Included is a very powerful custom filter interface which allows you to programatically filter through your beatmaps by writing your own code.",
@@ -56,6 +56,36 @@
             "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ],
+        "users": "12k+ Users",
+        "longDescription": "osuTracker is a tool that tracks osu! statistics of any player who signs up. It also combines the players of every country to give custom country statistics such as the top 100 play history and top 10 players over time. Data is collected once a day; when it is collected, the most common beatmaps seen in profiles are counted up to find the most popular mapsets in the game which is used to track the farm percentage of each player. The API for osuTracker is public and has full documentation.",
+        "features": [
+            "Tracking user stats",
+            "Tracking country stats",
+            "Allows any user to add themselves automatically",
+            "Tracking history of top 100 plays for each country (and global)",
+            "Tracking history of top 10 plays for each user",
+            "Compare user/country stats",
+            "Public API for devs",
+            "Optimized for mobile and desktop views"
+        ],
+        "screenshots": [
+            {
+                "title": "Home",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/900687653039652884/unknown.png?width=1325&height=691"
+            },
+            {
+                "title": "Dark Mode",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/900687708605808640/unknown.png?width=1322&height=692"
+            },
+            {
+                "title": "User Profile",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/900687795109109770/unknown.png?width=1325&height=691"
+            },
+            {
+                "title": "Comparing Users",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/900687961639776267/unknown.png?width=1325&height=692"
+            }
         ]
     },
     {
@@ -70,6 +100,29 @@
             "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ],
+        "longDescription": "snipe.nz is a website for NZ osu! players to track scores that are #1 in the country. It also features a discord bot for notifying users of snipes as they happen. This project was built to give more insight on the players of New Zealand and to offer a new way for people to play the game.",
+        "features": [
+            "Tracking snipes",
+            "Query beatmaps/scores and export to a collection file",
+            "See any user's country #1 scores",
+            "Discord bot to refresh maps and notify users of snipes who have opted in",
+            "Stats about who snipes the most scores and who gets sniped the most",
+            "Optimized for mobile and desktop views"
+        ],
+        "screenshots": [
+            {
+                "title": "Home",
+                "link": "https://user-images.githubusercontent.com/54062686/132940865-9ee30714-cfee-4749-8b4f-6914cf6325f4.png"
+            },
+            {
+                "title": "User Profile",
+                "link": "https://user-images.githubusercontent.com/54062686/132940886-0f501f1f-fb4b-4239-9e87-6d92424cf90d.png"
+            },
+            {
+                "title": "Leaderboard",
+                "link": "https://user-images.githubusercontent.com/54062686/132940905-3ace443e-09d1-4c78-a208-c6fab506e3a9.png"
+            }
         ]
     },
     {
@@ -82,6 +135,18 @@
             "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white",
             "https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white",
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ],
+        "longDescription": "Jacketing Studio Scheduler is a multi-platform, parallelized task scheduler with a feature-rich search visualization tool. The program takes an weighted directed acyclic graph as input via a .dot file and finds the optimal schedule for the tasks across the set number of processors. The aim is to help large data centers efficiently schedule any task graph on any number of their computers/processors.",
+        "features": [
+            "Single or Multi-threaded task scheduler",
+            "Highly SOLID, extendable design",
+            "Visualization of search with diagnostic graphs (RAM, CPU, Search Space, Best Schedules)"
+        ],
+        "screenshots": [
+            {
+                "title": "Visualization",
+                "link": "https://user-images.githubusercontent.com/54062686/130344784-80f0228f-0160-43ab-ba3a-5dc9250ab622.png"
+            }
         ]
     }
 ]
