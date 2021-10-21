@@ -15,18 +15,23 @@ export const Projects = () => {
 
     const history = useHistory()
 
+    const back = () => {
+        localStorage.setItem('skip-animation', "true")
+        history.push('/')
+    }
+
     return (
         <div className="w-full flex justify-center">
             <div className="flex flex-col space-y-4 max-w-5xl w-full items-center">
                 <div className="flex justify-between w-full items-center">
-                    <div className="cursor-pointer hover:bg-gray-600 rounded-md transition delay-75 ease-in w-8" onClick={() => history.push('/')}>
+                    <div className="cursor-pointer hover:bg-gray-600 rounded-md transition delay-75 ease-in w-8" onClick={() => back()}>
                         <ArrowBackIcon fontSize="large" className="text-white" />
                     </div>
                     <span className="text-7xl text-function my-10">Projects</span>
                     <span className="w-8"></span>
                 </div>
-                {projectsData.map(item => (
-                    <Project data={item} />
+                {projectsData.map((item, index) => (
+                    <Project key={index} data={item} />
                 ))}
             </div>
         </div>

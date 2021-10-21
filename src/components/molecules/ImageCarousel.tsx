@@ -7,7 +7,7 @@ export const ImageCarousel = ({ images }: { images: Screenshot[] }) => {
 
     return (
         <Carousel>
-            {images && images.map(item => <CarouselItem data={item} />)}
+            {images && images.map((item, index) => <CarouselItem key={index} data={item} />)}
         </Carousel>
     )
 }

@@ -13,8 +13,8 @@ export const ProjectSummary = ({ data }: { data: ProjectData }) => {
                 <span>{data.description}</span>
                 {data.technologies && (
                     <div className="flex items-center">
-                        {data.technologies.map(item => (
-                            <img src={item} alt="tech badge" className="mr-4" />
+                        {data.technologies.map((item, index) => (
+                            <img key={index} src={item} alt="tech badge" className="mr-4" />
                         ))}
                     </div>
                 )}

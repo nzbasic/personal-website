@@ -14,8 +14,8 @@ export const ProjectExpanded = ({ data }: { data: ProjectData }) => {
             
             <span className="text-lg font-semibold">Features:</span>
             <ul className="mb-4">
-                {(data?.features??[]).map(item => (
-                    <li className="list-disc">{item}</li>
+                {(data?.features??[]).map((item, index) => (
+                    <li key={index} className="list-disc">{item}</li>
                 ))}
             </ul>
             <span className="text-center my-2 text-lg font-semibold">Screenshots</span>
