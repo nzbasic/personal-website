@@ -59,7 +59,7 @@
     {
         "name": "snipe.nz",
         "icon": "https://user-images.githubusercontent.com/54062686/132940622-359c74fe-2b83-4024-82df-822f82267d20.png",
-        "description": "NZ Competitive country #1 leaderboard website and discord bot",
+        "description": "NZ competitive osu! country #1 leaderboard website and discord bot",
         "link": "https://snipe.nz",
         "technologies": [
             "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
@@ -85,7 +85,7 @@
         "name": "Stopwatch",
         "uni": true,
         "icon": "https://cdn.discordapp.com/attachments/627267590862929961/900672903870312478/timer_black_24dp1.svg",
-        "description": "A disruptive android application for browsing food and alcohol.",
+        "description": "A disruptive android application for buying food and alcohol.",
         "link": "link",
         "technologies": [
             "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white",
