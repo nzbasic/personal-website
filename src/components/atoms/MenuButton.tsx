@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MenuButton(props: any) {
+export const MenuButton = (props: any) => {
   return (
     <div className="text-white inline-block" onClick={props.onClick}>
       <span className="pl-12">

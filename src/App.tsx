@@ -1,4 +1,4 @@
-import Main from "./components/pages/Main";
+import { Main } from "./components/pages/Main";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
