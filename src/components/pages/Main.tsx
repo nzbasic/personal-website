@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import MenuButton from "../atoms/MenuButton";
 import Typist from "react-typist";
 import "../../css/Main.css";
-import CV from "../../jamescvnophone.pdf";
+// @ts-ignore
+import CV from  "../../jamescvnophone.pdf"; 
 
 export default function Main2() {
   const [firstTransition, setFirstTransition] = useState(false);
