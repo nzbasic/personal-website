@@ -147,8 +147,10 @@
     {
         "name": "Parallel Task Scheduler",
         "uni": true,
+        "website": false,
         "icon": "https://raw.githubusercontent.com/nzbasic/306-Parallel-Task-Scheduler/master/src/main/resources/img/logo/jacketing-no-text%402x.png",
         "description": "A multithreaded solution for scheduling tasks on multiple computing systems, featuring an interactive visualization. ",
+        "link": "https://github.com/nzbasic/306-Parallel-Task-Scheduler/releases/latest",
         "repo": "https://github.com/nzbasic/306-Parallel-Task-Scheduler",
         "story": "This project was a third year software engineering assignment where we had to work in groups of 5. We had to give weekly presentations to the class on our progress and also a demo at the end of the course. The context was we had a fake client with a large processing data center who wanted us to create a tool to assign incoming jobs onto their processors optimally and quickly with a visualizer. So, it is an NP hard graph traversing problem.",
         "technologies": [
