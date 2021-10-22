@@ -13,7 +13,6 @@ const useStyles = makeStyles({
             backgroundColor: "#192227"
         }
     },
-   
 })
 
 export const Project = ({ data }: { data: ProjectData }) => {

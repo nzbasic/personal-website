@@ -3,6 +3,7 @@ import { Projects } from './components/pages/Projects'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import React from "react";
+import { About } from "./components/pages/About";
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Main} />
           <Route path="/projects" component={Projects} />
+          <Route path="/about" component={About} />
         </Switch>
       </BrowserRouter>
     </ThemeProvider>

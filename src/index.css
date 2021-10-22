@@ -6,3 +6,7 @@
     background-color: "#263238" !important;
     color: "#263238" !important;
 }
+
+.middle {
+    top: 50%;
+}
