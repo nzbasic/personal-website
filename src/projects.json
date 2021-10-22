@@ -11,9 +11,15 @@
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
         ],
         "users": "1.6k+ Downloads",
+        "website": false,
         "link": "https://github.com/nzbasic/Collection-Helper/releases/latest",
         "repo": "https://github.com/nzbasic/Collection-Helper",
         "longDescription": "Collection Helper is a tool you can use to manage your collections in osu!. It aims to make editing and sharing your collections quick and easy with its intuitive interface. Included is a very powerful custom filter interface which allows you to programatically filter through your beatmaps by writing your own code.",
+        "story": "At the beginning, I wanted to create a tool that would help me sort my beatmaps into categories (in this game, there are types of maps that are considered stream maps which consist of groups of tightly packed notes). However just doing that wasn't enough for me, I wanted to make a tool where I could write some filter algorithm on the fly and get some output that I could use in-game right away. That lead to implementing some collection tools which lead me to the idea of just making a full collection tool.",
+        "challenges": "When I started building it, it was written using a framework called Wails which was a GUI tool for Golang which packed a web frontend that ran on mshtml. This (perhaps obviously) turned into a nightmare quickly, I had to write a modern app in a browser with less compatibility than IE11 but instead of using a different framework I struggled through the pain. In the end I rediscovered an un-fixable memory leak in a deep dependency. Yea. So I swapped to electron which was a fantastic difference.",
+        "learned": "The story above taught me the hard way to actually think critically about framework / language limitations before diving into a project, hindsight is 2020 but I really don't know what made me go down that path for so long. This is the first full large scale standalone application that I have shipped and maintained so I have learned a great deal of what goes into building and releasing software. At the start, I released some updates, bugs were found and I had to release hot fix after hot fix before I learned that I needed to put more effort into testing before release.",
+        "improvements": "The backend design is quite all over the place because I didn't fully think over the architecture before implementing it. This quite a common theme in my apps as I tend to want to just write code for hours at a time to get something working and then move on. When I have time I would like to go back and refactor the whole backend to make the design more extendable.",
+        "comments": "I received a lot of feedback from the community though the social media links I placed on the sidebar of the app which was really great to see. It seemed to spread within the Russian osu! community as I received a few comments from Russian users and someone even offered to translate the whole app into Russian for free. This kind of support has become very meaningful to me and has kept me inspired to put my full effort into these apps even if I do not get paid to make them.",
         "features": [
             "Available in English and Russian (thanks Maks220v for Russian translation)",
             "Add/remove/merge collections",
@@ -57,8 +63,14 @@
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
         ],
-        "users": "12k+ Users",
+        "users": "12k+ Users (2.5k Unique monthly active users Oct 2021)",
+        "website": true,
         "longDescription": "osuTracker is a tool that tracks osu! statistics of any player who signs up. It also combines the players of every country to give custom country statistics such as the top 100 play history and top 10 players over time. Data is collected once a day; when it is collected, the most common beatmaps seen in profiles are counted up to find the most popular mapsets in the game which is used to track the farm percentage of each player. The API for osuTracker is public and has full documentation.",
+        "story": "osuTracker was my first and most successful tool (by metrics). It was born because I was not really satisfied with the existing tracking tools on the internet. I am very interested in deep, granular, historical data so I wanted to track more data and collect data more often. I was also interested in overall metrics that weren't really considered before, like statistics for overall countries. ",
+        "challenges": "The biggest limitation I had to deal with and work around was the osu! API rate limit which is 60 calls per minute (however this does not seem to be strictly enforced). This is an issue because I aim to collect data every day for a large number of users and need to make multiple calls per user. I needed to get around this by implementing some caches for data, namely beatmaps, which allows me to greatly decrease the number of calls I need to make.",
+        "learned": "Having to support thousands of users with millions of data points taught me how to build a scalable service. I went from having 8 manually supported users, to over ten thousand users and anyone can add themselves via a self serve button. This meant using appropriate data structures and front end queries (e.g. filtered server side pagination). It was my first React app which gave me a good knowledge foundation to build on for my next apps.",
+        "improvements": "The backend is quite fragile and years old, it needs to be fully rewritten but that is quite a large and delicate process so I will need more time before I can get started.",
+        "comments": "What you see on the website is actually the 3rd iteration of osuTracker, which originally started out as a terrible small addition to another site that I ran. That 1st iteration was jQuery, not scalable, and looked terrible, I had support for 8 players being tracked and I had to add everything manually. The 2nd iteration was closer to what is there today, it was written in React and had extendable users but still looked pretty bad. I put a great deal of effort into learning CSS ",
         "features": [
             "Tracking user stats",
             "Tracking country stats",
@@ -101,7 +113,14 @@
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
             "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
         ],
+        "website": true,
+        "users": "618 Unique monthly active users in NZ (Oct 2021)",
         "longDescription": "snipe.nz is a website for NZ osu! players to track scores that are #1 in the country. It also features a discord bot for notifying users of snipes as they happen. This project was built to give more insight on the players of New Zealand and to offer a new way for people to play the game.",
+        "story": "There was another popular website that tracked country #1s but it did not have New Zealand added, so I decided to make one myself. From start to finish it took me 1 week to build the whole site including backend and deployment.",
+        "challenges": "Nothing in this project particularly challenged me, the reason I started this project was not to learn a new technology like my other projects, I just wanted to build a useful tool as quickly as possible.",
+        "learned": "For this project, I planned the database structures and interfaces ahead of time and used typescript for the frontend and backend which was a complete dream. It has taught me the importance of using interfaces as the type hinting they provide in editors makes using them both safer and effortless.",
+        "improvements": "I would like to expand the feature set of the discord bot to make it easier for people to use the site in a social context.",
+        "comments": "Nothing extra to note.",
         "features": [
             "Tracking snipes",
             "Query beatmaps/scores and export to a collection file",
@@ -131,6 +150,7 @@
         "icon": "https://raw.githubusercontent.com/nzbasic/306-Parallel-Task-Scheduler/master/src/main/resources/img/logo/jacketing-no-text%402x.png",
         "description": "A multithreaded solution for scheduling tasks on multiple computing systems, featuring an interactive visualization. ",
         "repo": "https://github.com/nzbasic/306-Parallel-Task-Scheduler",
+        "story": "This project was a third year software engineering assignment where we had to work in groups of 5. We had to give weekly presentations to the class on our progress and also a demo at the end of the course. The context was we had a fake client with a large processing data center who wanted us to create a tool to assign incoming jobs onto their processors optimally and quickly with a visualizer. So, it is an NP hard graph traversing problem.",
         "technologies": [
             "https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white",
             "https://img.shields.io/badge/gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white",

@@ -3,13 +3,18 @@ export interface ProjectData {
     icon: string,
     description: string,
     uni?: boolean,
-    technologies?: string[],
+    technologies: string[],
     users?: string,
     link?: string,
     repo: string,
-    longDescription?: string,
-    features?: string[],
-    screenshots?: Screenshot[]
+    longDescription: string,
+    story?: string,
+    challenges?: string,
+    learned?: string,
+    improvements?: string,
+    comments?: string,
+    features: string[],
+    screenshots: Screenshot[]
 }
 
 export interface Screenshot {
