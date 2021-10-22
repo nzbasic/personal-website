@@ -16,6 +16,7 @@ export const ProjectExpanded = ({ data }: { data: ProjectData }) => {
                 <span>•</span>
                 <a className=" text-blue-400 text-xl hover:underline font-semibold" href={data.repo} target="_blank" rel="noreferrer">Repo</a>
             </div>
+            {data.users && <span className="font-semibold text-lg mb-2">{data.users}</span>}
             <span className="text-lg font-semibold">Features:</span>
             <ul className="mb-4">
                 {(data?.features??[]).map((item, index) => (
