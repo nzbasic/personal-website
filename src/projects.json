@@ -1,5 +1,97 @@
 [
     {
+        "name": "osuTracker",
+        "icon": "https://user-images.githubusercontent.com/54062686/125592488-d5ea3612-3275-4087-8a96-b7651c5630c4.png",
+        "description": "osu! statistics tracker. Currently tracking over 13,000 users and every active country.",
+        "link": "https://osutracker.com",
+        "repo": "https://github.com/nzbasic/osutracker",
+        "technologies": [
+            "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
+            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
+            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+        ],
+        "users": "13k+ Users (2.5k Unique monthly active users Oct 2021)",
+        "website": true,
+        "longDescription": "osuTracker is a tool that tracks osu! statistics of any player who signs up. It also combines the players of every country to give custom country statistics such as the top 100 play history and top 10 players over time. Data is collected once a day; when it is collected, the most common beatmaps seen in profiles are counted up to find the most popular mapsets in the game which is used to track the farm percentage of each player. The API for osuTracker is public and has full documentation.",
+        "story": "osuTracker was my first and most successful tool (by metrics). It was born because I was not really satisfied with the existing tracking tools on the internet. I am very interested in deep, granular, historical data so I wanted to track more data and collect data more often. I was also interested in overall metrics that weren't really considered before, like statistics for overall countries. ",
+        "challenges": "The biggest limitation I had to deal with and work around was the osu! API rate limit which is 60 calls per minute (however this does not seem to be strictly enforced). This is an issue because I aim to collect data every day for a large number of users and need to make multiple calls per user. I needed to get around this by implementing some caches for data, namely beatmaps, which allows me to greatly decrease the number of calls I need to make.",
+        "learned": "Having to support thousands of users with millions of data points taught me how to build a scalable service. I went from having 8 manually supported users, to over ten thousand users and anyone can add themselves via a self serve button. This meant using appropriate data structures and front end queries (e.g. filtered server side pagination). It was my first React app which gave me a good knowledge foundation to build on for my next apps.",
+        "improvements": "The backend is quite fragile and years old, it needs to be fully rewritten but that is quite a large and delicate process so I will need more time before I can get started.",
+        "comments": "What you see on the website is actually the 4th iteration of osuTracker, which originally started out as a terrible small addition to another site that I ran. That 1st iteration was jQuery, not scalable, and looked terrible, I had support for 8 players being tracked and I had to add everything manually. The 2nd iteration was closer to what is there today, it was written in React and had extendable users but still looked pretty bad. The third iteration was a lot more scalable, which is where I started to advertise it more and got a lot of users. Finally, the current iteration was a rewrite of the 3rd but in TypeScript.",
+        "features": [
+            "Tracking user stats",
+            "Tracking country stats",
+            "Allows any user to add themselves automatically",
+            "Tracking history of top 100 plays for each country (and global)",
+            "Tracking history of top 10 plays for each user",
+            "Compare user/country stats",
+            "Public API for devs",
+            "Optimized for mobile and desktop views"
+        ],
+        "screenshots": [
+            {
+                "title": "Home",
+                "link": "https://cdn.discordapp.com/attachments/627267590862929961/904477419413602385/unknown.png"
+            },
+            {
+                "title": "Dark Mode",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/904477893185400852/unknown.png"
+            },
+            {
+                "title": "User Profile",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/904477586846019594/unknown.png"
+            },
+            {
+                "title": "Comparing Users",
+                "link": "https://media.discordapp.net/attachments/627267590862929961/904477753598951474/unknown.png"
+            }
+        ]
+    },
+    {
+        "name": "Batch Beatmap Downloader",
+        "icon": "https://user-images.githubusercontent.com/54062686/154786704-a8f12c81-1ec3-48e4-a1cb-9f74ed164a43.png",
+        "description": "An easy way to mass download osu! beatmaps",
+        "link": "https://github.com/nzbasic/batch-beatmap-downloader/releases/latest",
+        "repo": "https://github.com/nzbasic/batch-beatmap-downloader",
+        "technologies": [
+            "https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white",
+            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+            "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
+            "https://img.shields.io/badge/Electron-2B2E3A?style=for-the-badge&logo=electron&logoColor=9FEAF9",
+            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
+        ],
+        "website": false,
+        "longDescription": "Batch Beatmap Downloader provides an easy way to download a lot of osu! maps matching some filter criteria.",
+        "story": "Downloading a lot of osu! beatmaps is a pain, the only official way to download them is one by one from either the client (if you are a paid user), or one by one from the website. There are other beatmap mirrors which you can download from but no one lets you mass download maps because that would cost them a lot of money!",
+        "challenges": "Hosting the beatmaps for a low cost was the biggest challenge. Any cloud storage providers would bill me hundreds or thousands of dollars per month in egress data charges. So, I built a server specifically for this project so I could host everything myself.",
+        "learned": "I used this project to help learn golang which is what I built the server API with. Part way through development I started using the release candidate 1.18 version of go so I could use generics, which eased some of the pain of coming from typescript.",
+        "improvements": "So far I haven't found any major improvements to make other than spending more money for better uplink connections or better server components.",
+        "comments": "Building the server was a fun project and has put me on the path of server components. I am looking to get some better equipment so I can setup a full homelab!",
+        "features": [
+            "Mass download osu beatmaps",
+            "User friendly recursive query builder",
+            "Included preset queries for ease of use",
+            "Custom tags on maps to search by (farm, stream)",
+            "Add downloaded maps to new collections"
+        ],
+        "screenshots": [
+            {
+                "title": "Home",
+                "link": "https://media.discordapp.net/attachments/882111142355435540/945824215192440902/unknown.png"
+            },
+            {
+                "title": "Query Builder",
+                "link": "https://media.discordapp.net/attachments/882111142355435540/945824766680502312/unknown.png"
+            },
+            {
+                "title": "Server Status",
+                "link": "https://media.discordapp.net/attachments/882111142355435540/945824975946928139/unknown.png"
+            }
+        ] 
+    },
+    {
         "name": "Collection Helper",
         "icon": "https://user-images.githubusercontent.com/54062686/125156185-54ed4500-e1b8-11eb-8051-2f4b981eb542.png",
         "description": "Standalone, feature-rich, beautiful collection manager for osu! ",
@@ -10,7 +102,7 @@
             "https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white",
             "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"
         ],
-        "users": "1.6k+ Downloads",
+        "users": "3.4k+ Downloads",
         "website": false,
         "link": "https://github.com/nzbasic/Collection-Helper/releases/latest",
         "repo": "https://github.com/nzbasic/Collection-Helper",
@@ -47,56 +139,6 @@
             { 
                 "title": "Dark mode",
                 "link": "https://user-images.githubusercontent.com/54062686/127122453-8fc3a7a0-c2b7-4adf-80a4-b5e6ca42e0b9.png"
-            }
-        ]
-    },
-    {
-        "name": "osuTracker",
-        "icon": "https://user-images.githubusercontent.com/54062686/125592488-d5ea3612-3275-4087-8a96-b7651c5630c4.png",
-        "description": "osu! statistics tracker. Currently tracking over 10,000 users and every active country.",
-        "link": "https://osutracker.com",
-        "repo": "https://github.com/nzbasic/osutracker",
-        "technologies": [
-            "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-            "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
-            "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
-            "https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white",
-            "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
-        ],
-        "users": "12k+ Users (2.5k Unique monthly active users Oct 2021)",
-        "website": true,
-        "longDescription": "osuTracker is a tool that tracks osu! statistics of any player who signs up. It also combines the players of every country to give custom country statistics such as the top 100 play history and top 10 players over time. Data is collected once a day; when it is collected, the most common beatmaps seen in profiles are counted up to find the most popular mapsets in the game which is used to track the farm percentage of each player. The API for osuTracker is public and has full documentation.",
-        "story": "osuTracker was my first and most successful tool (by metrics). It was born because I was not really satisfied with the existing tracking tools on the internet. I am very interested in deep, granular, historical data so I wanted to track more data and collect data more often. I was also interested in overall metrics that weren't really considered before, like statistics for overall countries. ",
-        "challenges": "The biggest limitation I had to deal with and work around was the osu! API rate limit which is 60 calls per minute (however this does not seem to be strictly enforced). This is an issue because I aim to collect data every day for a large number of users and need to make multiple calls per user. I needed to get around this by implementing some caches for data, namely beatmaps, which allows me to greatly decrease the number of calls I need to make.",
-        "learned": "Having to support thousands of users with millions of data points taught me how to build a scalable service. I went from having 8 manually supported users, to over ten thousand users and anyone can add themselves via a self serve button. This meant using appropriate data structures and front end queries (e.g. filtered server side pagination). It was my first React app which gave me a good knowledge foundation to build on for my next apps.",
-        "improvements": "The backend is quite fragile and years old, it needs to be fully rewritten but that is quite a large and delicate process so I will need more time before I can get started.",
-        "comments": "What you see on the website is actually the 3rd iteration of osuTracker, which originally started out as a terrible small addition to another site that I ran. That 1st iteration was jQuery, not scalable, and looked terrible, I had support for 8 players being tracked and I had to add everything manually. The 2nd iteration was closer to what is there today, it was written in React and had extendable users but still looked pretty bad. I put a great deal of effort into learning CSS ",
-        "features": [
-            "Tracking user stats",
-            "Tracking country stats",
-            "Allows any user to add themselves automatically",
-            "Tracking history of top 100 plays for each country (and global)",
-            "Tracking history of top 10 plays for each user",
-            "Compare user/country stats",
-            "Public API for devs",
-            "Optimized for mobile and desktop views"
-        ],
-        "screenshots": [
-            {
-                "title": "Home",
-                "link": "https://media.discordapp.net/attachments/627267590862929961/900687653039652884/unknown.png?width=1325&height=691"
-            },
-            {
-                "title": "Dark Mode",
-                "link": "https://media.discordapp.net/attachments/627267590862929961/900687708605808640/unknown.png?width=1322&height=692"
-            },
-            {
-                "title": "User Profile",
-                "link": "https://media.discordapp.net/attachments/627267590862929961/900687795109109770/unknown.png?width=1325&height=691"
-            },
-            {
-                "title": "Comparing Users",
-                "link": "https://media.discordapp.net/attachments/627267590862929961/900687961639776267/unknown.png?width=1325&height=692"
             }
         ]
     },
