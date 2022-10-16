@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+
 .MuiPaper-root {
     background-color: "#263238" !important;
     color: "#263238" !important;
