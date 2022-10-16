@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { MenuButton } from "../atoms/MenuButton";
 import Typist from "react-typist";
-import "../../css/Main.css";
-// @ts-ignore
-import CV from  "../../jamescvnophone.pdf"; 
 import { Projects } from "./Projects";
 import { About } from "./About";
 import { Animated } from "react-animated-css"
@@ -76,7 +73,7 @@ export const Main = () => {
                 <span className="text-keyword pl-6">return (</span><br></br>
                 <MenuButton onClick={() => toggleView(Pages.ABOUT, Pages.HOME)}>&#60;About Me /&#62;</MenuButton><br></br>
                 <MenuButton onClick={() => toggleView(Pages.PROJECTS, Pages.HOME)}>&#60;Projects /&#62;</MenuButton><br></br>
-                <MenuButton onClick={() => window.open(CV)}>&#60;Resume /&#62;</MenuButton><br></br>
+                {/* <MenuButton onClick={() => window.open(CV)}>&#60;Resume /&#62;</MenuButton><br></br> */}
                 <span className="text-keyword pl-6">)</span>
                 <span className="text-white">;</span>
                 <Typist.Delay ms={200} /><br></br>

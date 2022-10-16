@@ -10,7 +10,7 @@ export const MenuButton = (props: any) => {
         &#9;{props.children.match(/\w+/g)}&nbsp;
       </span>
       <span>
-        {props.children.slice(-2) == "/>" ? props.children.slice(-2) : ""}{" "}
+        {props.children.slice(-2) === "/>" ? props.children.slice(-2) : ""}{" "}
       </span>
     </div>
   );

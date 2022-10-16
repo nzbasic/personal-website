@@ -1,9 +1,19 @@
-export const StoryText = ({ title, text, className }: { title: string, text: string, className?: string }) => {
+import React from 'react';
+import classNames from 'classnames';
 
-    return text ? (
-        <p className={"flex flex-col " + className}>
-            <span className="font-semibold text-lg">{title}:</span>
-            <span>{text}</span>
-        </p>
-    ) : null
+interface PropTypes { 
+  title: string;
+  text: string;
+  className?: string;
 }
+
+export const StoryText = ({ title, text, className }: PropTypes) => {
+  if (!text) return null;
+
+  return (
+    <p className={classNames(className, "flex flex-col")}>
+      <span className="font-semibold text-lg">{title}:</span>
+      <span>{text}</span>
+    </p>
+  )
+};
