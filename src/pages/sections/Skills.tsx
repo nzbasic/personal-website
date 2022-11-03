@@ -39,7 +39,7 @@ export const Skills = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-start gap-4 max-w-3xl w-full">
+      <div className="flex flex-col items-start gap-4 alt-col-width">
         <div className="w-full flex flex-col gap-8 mb-6">
           <div className="flex flex-col gap-2">
             <h2>Here are the technologies I use regularly</h2>

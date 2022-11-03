@@ -49,7 +49,7 @@ export const BBD = () => {
         </div>
       </div>
 
-      <div className="flex flex-col max-w-3xl w-full">
+      <div className="flex flex-col alt-col-width">
         <ImageSlider images={screenshots} />
       </div>
 
