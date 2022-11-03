@@ -1,4 +1,4 @@
-import { Screenshot } from "../../types/ProjectData"
+import { Screenshot } from "../../types/project"
 
 export const CarouselItem = ({ data }: { data: Screenshot }) => {
   return (

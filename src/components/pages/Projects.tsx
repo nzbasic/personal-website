@@ -1,5 +1,5 @@
 import projectsRaw from "../../resources/projects.json";
-import { ProjectData } from '../../types/ProjectData'
+import { ProjectData } from '../../types/project'
 import { Project } from '../molecules/Project'
 import { PageTitle } from "../atoms/PageTitle";
 

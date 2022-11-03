@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bglight: "#263238",
-        bgdark: "#192227",
+        "monokai-light": "#263238",
+        "monokai-dark": "#192227",
         keyword: "#F12C7D",
         function: "#26ABF4",
         declaration: "#6BE02F",
@@ -13,6 +13,11 @@ module.exports = {
         text: "#E6DB74",
         bracket: "#C7CA00",
       },
+      screens: {
+        '3xl': '1600px',
+        '4xl': '1921px',
+        '5xl': '2560px',
+      }
     },
   },
   plugins: [],

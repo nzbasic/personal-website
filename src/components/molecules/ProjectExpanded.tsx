@@ -1,5 +1,5 @@
 import React from "react"
-import { ProjectData } from "../../types/ProjectData"
+import { ProjectData } from "../../types/project"
 import { ImageCarousel } from "./ImageCarousel"
 import { StoryText } from "../atoms/StoryText"
 

@@ -1,4 +1,4 @@
-import { ProjectData } from "../../types/ProjectData"
+import { ProjectData } from "../../types/project"
 
 export const ProjectSummary = ({ data }: { data: ProjectData }) => { 
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion, AccordionDetails, AccordionSummary, makeStyles } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { ProjectData } from '../../types/ProjectData'
+import { ProjectData } from '../../types/project'
 import { ProjectExpanded } from './ProjectExpanded';
 import { ProjectSummary } from './ProjectSummary';
 

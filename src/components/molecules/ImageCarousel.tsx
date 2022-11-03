@@ -1,4 +1,4 @@
-import { Screenshot } from "../../types/ProjectData"
+import { Screenshot } from "../../types/project"
 import Carousel from "react-material-ui-carousel"
 import React from "react"
 import { CarouselItem } from "../atoms/CarouselItem"
