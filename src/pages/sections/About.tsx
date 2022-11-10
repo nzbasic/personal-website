@@ -13,8 +13,8 @@ export const About = () => {
 
   return (
     <div className="relative flex flex-col justify-between bg-monokai-light text-white min-h-screen">
-      <div className="flex flex-col gap-8 xl:flex-row lg:items-center content-padding !pb-52 min-h-screen">
-        <div className="flex flex-col items-start gap-8 ">
+      <div className="flex flex-col !gap-12 xl:flex-row lg:items-center content-padding pb-52 min-h-screen">
+        <div className="flex flex-col items-start gap-8">
           <div>
             <h2 className="mb-2">Hi, I'm</h2>
             <h1 className="text-7xl">James / nzbasic</h1>
@@ -23,7 +23,7 @@ export const About = () => {
           <Contacts />
         </div>
 
-        <div className="flex flex-col items-center xl:items-end w-full h-full">
+        <div className="flex flex-col items-center xl:items-end w-full h-full mb-36 xl:mb-4">
           <div className="relative flex flex-col items-center 4xl:max-w-2xl 2xl:max-w-lg max-w-md w-full h-full">
             {countries && (
               <div className="aspect-square w-full h-full">
