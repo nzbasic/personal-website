@@ -15,6 +15,7 @@ const y = (d: TechnologyEnjoyment) => d.enjoyment;
 
 const r = 15;
 let tooltipTimeout: number;
+let index = 0;
 
 export const TechnologyChart = ({ width = 0, height = 0 }: ResponsiveChildProps) => {
   const svgRef = useRef<SVGSVGElement>(null)
@@ -73,8 +74,6 @@ export const TechnologyChart = ({ width = 0, height = 0 }: ResponsiveChildProps)
     }, 250)
   }, [hideTooltip])
 
-  console.log('render')
-
   return (
     <div className="relative">
       <svg width={width} height={height} ref={svgRef}>
@@ -106,7 +105,7 @@ export const TechnologyChart = ({ width = 0, height = 0 }: ResponsiveChildProps)
                 width="100%"
                 height="100%"
               >
-                <image href={require("../../resources/logos/" + imageUrl)} width={r*2} height={r*2} />
+                <image href={imageUrl} width={r*2} height={r*2} />
               </pattern>
             </React.Fragment>
           ))}
@@ -159,7 +158,7 @@ export const TechnologyChart = ({ width = 0, height = 0 }: ResponsiveChildProps)
         </Group>
       </svg>
       {tooltipOpen && tooltipData && tooltipLeft != null && tooltipTop != null && (
-        <Tooltip left={tooltipLeft + 10} top={tooltipTop + 10}  className="!bg-function border border-black">
+        <Tooltip left={tooltipLeft - 50} top={tooltipTop + 10} className="!bg-function border border-black">
           <div className="text-white">
             {tooltipData.title}
           </div>

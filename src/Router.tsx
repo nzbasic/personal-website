@@ -3,18 +3,22 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Layout } from "./components/layout/Layout";
 import { useNavigation } from "./context/NavigationProvider";
-import { ScrollerMotion } from "scroller-motion";
+import { useData } from "./context/DataProvider";
+import { motion } from "framer-motion";
 
 const Router = () => {
-  const { scrollTo } = useNavigation();
-  
+  const { scrollTo, pageLoadHash } = useNavigation();
+  const { progress, loaded } = useData();
+
   useEffect(() => {
     const onPageLoad = () => {
       if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'manual'
       }
-      
-      scrollTo(window.location.hash)
+  
+      if (pageLoadHash !== '#about') {
+        scrollTo(pageLoadHash)
+      }
     }
     
     if (document.readyState === 'complete') {
@@ -23,7 +27,21 @@ const Router = () => {
       window.addEventListener('load', onPageLoad);
       return () => window.removeEventListener('load', onPageLoad);
     }
-  }, [scrollTo])
+  }, [scrollTo, pageLoadHash])
+
+  if (!loaded) return (
+    <div className="h-screen w-screen bg-monokai-light flex items-center justify-center">
+      <div className="mx-12 w-full border border-function rounded-md border-2 h-12">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={{ width: progress * 100 + '%' }}
+          transition={{ duration: 1 }}
+          className="bg-function h-full"
+        >
+        </motion.div>
+      </div>
+    </div>
+  );
 
   return (
     <BrowserRouter>

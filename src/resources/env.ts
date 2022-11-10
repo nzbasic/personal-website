@@ -1,0 +1,1 @@
+export const contentUrl = window.location.origin + "/content";

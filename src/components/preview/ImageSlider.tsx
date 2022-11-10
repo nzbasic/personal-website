@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import classNames from 'classnames';
-import { ImagePreviewContent } from '../../types/project';
 import { Glass } from '../layout/Glass';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 interface ImageSliderProps {
-  images: ImagePreviewContent[];
+  images: string[];
+}
+
+const imageToTitle = (image: string) => {
+  const removeExtension = image.substring(0, image.lastIndexOf('.')) || image;
+  const split = removeExtension.split('/');
+  return split[split.length - 1].replace('-', ' ');
 }
 
 export const ImageSlider = ({ images }: ImageSliderProps) => {
@@ -21,28 +26,24 @@ export const ImageSlider = ({ images }: ImageSliderProps) => {
   })
 
   return (
-    <div className="relative w-full h-full">
-      <div ref={sliderRef} className="keen-slider">
+    <div className="relative w-full aspect-video">
+      <div ref={sliderRef} className="keen-slider h-full">
         {images.map((image, index) => (
-          <picture key={image.title} className={`keen-slider__slide number-slide${index} rounded-xl`}>
-            {image.light.map(data => (
-              <source key={data.src} media="" srcSet={data.src} />
-            ))}
-            <img src={image.light[0].src} alt={image.title} className="w-auto" />
-          </picture>
+          <div key={image} className={`relative rounded-xl flex flex-col keen-slider__slide number-slide${index}`}>
+            <div className="rounded-xl w-full h-full">
+              <img loading="lazy" src={image} alt={image} className={`w-auto`} width={1280} height={720} />
+            </div>
+            <Glass className="text-sm absolute bottom-10 p-2">{imageToTitle(image)}</Glass>
+          </div>
         ))}
+
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow left onClick={() => instanceRef.current?.prev()}/>
+            <Arrow onClick={() => instanceRef.current?.next()} />
+          </>
+        )}
       </div>  
-      {loaded && instanceRef.current && (
-        <>
-          <Arrow
-            left
-            onClick={() => instanceRef.current?.prev()}
-          />
-          <Arrow
-            onClick={() => instanceRef.current?.next()}
-          />
-        </>
-      )}
     </div>
   )
 };

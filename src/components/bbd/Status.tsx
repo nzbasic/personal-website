@@ -1,18 +1,7 @@
-import { Glass } from "../layout/Glass";
 import useApi from '../../hooks/useApi';
 import { Metrics } from "../../types/api";
 import { bytesToFileSize } from '../../util/fileSize';
 import { useEffect, useMemo } from "react";
-import Table from "../table/Table";
-import StatusTableRow from "../table/StatusTableRow";
-import { TableHeader } from "../../types/table";
-
-const headers: TableHeader[] = [
-  { title: "Total Size", key: "TotalSize" },
-  { title: "Remaining Size", key: "RemainingSize" },
-  { title: "Download Speed", key: "AverageSpeed" },
-  { title: "Time Left", key: "EstTimeLeft" }
-];
 
 export const Status = () => {
   const { data: metrics, refetch } = useApi<Metrics>('https://api.nzbasic.com/metrics')
@@ -33,41 +22,50 @@ export const Status = () => {
     return [currentDownloads, activeDownloads, currentBandwidth]
   }, [metrics]);
 
-  if (!metrics) return <>Loading...</>
-  return (
-    <div className="flex flex-col gap-4 items-center flex-grow w-full max-w-2xl bg-monokai-light rounded-xl select-none">
-      <div className="bg-[#00ff00] rounded-xl rounded-b-none shadow w-full h-24">
-        <div className="text-black flex justify-between items-center w-full h-full px-8">
-          <div className="flex flex-col items-center w-full">
-            <span className="font-bold text-3xl">{(currentBandwidth / 1e6).toFixed(0)}Mbps</span>
-            <span>{(metrics.Download.CurrentBandwidthUsage / 1e6).toFixed(0)}Mbps Avg 1min</span>
-          </div>
-          <span className="text-xl w-full font-medium text-center">Bandwidth Use</span>
+
+  if (!metrics) return (
+    <div className="flex flex-col sm:flex-row w-full bg-monokai-light rounded-xl">
+      <div className="flex flex-col items-center justify-center p-4 bg-emerald-500 rounded-t-xl sm:rounded-tr-none sm:rounded-l-xl w-full sm:w-52 gap-1">
+        <span className="text-center font-semibold">Current Usage</span>
+        <div className="bg-gray-50/40 rounded animate-pulse">
+          <span className="text-center font-semibold invisible">0 Active Downloads</span>
+        </div>
+        <div className="bg-gray-50/40 rounded animate-pulse">
+          <span className="font-bold text-lg sm:text-3xl invisible">0Mpbs</span>
         </div>
       </div>
-
-      <div className="flex flex-col gap-2 w-full px-6">
+      <div className="flex flex-col p-4 gap-1">
         <span className="font-bold text-lg">Daily Stats</span>
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-1">
+          <div className="bg-gray-50/30 rounded animate-pulse">
+            <span className="invisible">0 Beatmap Sets Downloaded</span>
+          </div>
+          <div className="bg-gray-50/30 rounded animate-pulse">
+            <span className="invisible">000.00GB Downloaded</span>
+          </div>
+          <div className="bg-gray-50/30 rounded animate-pulse">
+            <span className="invisible">000 Completed Downloads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
+  return (
+    <div className="flex flex-col sm:flex-row w-full bg-monokai-light rounded-xl">
+      <div className="flex flex-col items-center justify-center p-4 bg-emerald-500 rounded-t-xl sm:rounded-tr-none sm:rounded-l-xl w-full sm:w-52 gap-1">
+        <span className="text-center font-semibold">Current Usage</span>
+        <span className="text-center font-semibold">{activeDownloads.length} Active Downloads</span>
+        <span className="font-bold text-lg sm:text-3xl">{(currentBandwidth / 1e6).toFixed(0)}Mbps</span>
+      </div>
+      <div className="flex flex-col p-4 gap-1">
+        <span className="font-bold text-lg">Daily Stats</span>
+        <div className="flex flex-col gap-1">
           <span>{metrics.Download.DailyStats.Maps} Beatmap Sets Downloaded</span>
           <span>{bytesToFileSize(metrics.Download.DailyStats.Size)} Downloaded</span>
           <span>{currentDownloads.filter((i) => i.Ended).length} Completed Downloads</span>
         </div>
       </div>
-      
-
-      <div className="flex flex-col gap-2 w-full">
-        <span className="font-bold text-lg px-6 pb-2">Current Downloads</span>
-        {activeDownloads.length ? (
-          <Table
-            data={activeDownloads.slice(0,5)}
-            headers={headers}
-            RenderRow={StatusTableRow}
-          />
-        ) : (
-          <span className="font-medium px-6 pb-4">No active downloads</span>
-        )}
-      </div>
     </div>
-  )
+  );
 };

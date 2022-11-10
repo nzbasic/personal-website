@@ -1,63 +1,97 @@
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import classNames from "classnames";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigation } from "../../../context/NavigationProvider";
+import { projects } from "../../../resources/projects";
 import { NavLink } from "./NavLink";
+import { AnimatePresence, motion } from 'framer-motion';
 
-import BBD from '../../../resources/logos/bbd.svg';
-import Time from '../../../resources/logos/time.svg';
-import OT from '../../../resources/logos/ot256.png';
-import MPD from '../../../resources/logos/mpd.png';
-import SEX from '../../../resources/logos/simex.png';
-import CH from '../../../resources/logos/ch.png';
-import SNZ from '../../../resources/logos/snipe.png';
+interface ProjectsDropdownProps {
+  handleNavigation: (hash: string) => void;
+}
 
-const projects = [
-  { title: "BBD", link: "#projects-bbd", icon: BBD, },
-  { title: 'osuTracker', link: '#projects-osutracker', icon: OT },
-  { title: 'Māori PD', link: '#projects-maori-pronunciation-dictionary', icon: MPD },
-  { title: 'Simulate Exchange', link: '#projects-simulate-exchange', icon: SEX },
-  { title: 'Time Tracker', link: '#projects-time-tracker', icon: Time },
-  { title: 'Collection Helper', link: '#projects-collection-helper', icon: CH },
-  { title: 'snipe.nz', link: '#projects-snipe-nz', icon: SNZ },
-]
+const itemDuration = 0.2;
+const itemDelay = 0.2;
 
-export const ProjectsDropdown = () => {
+const parentDuration = projects.length * (itemDelay) - itemDuration
+const parentHeight = (2.75 * projects.length) + (0.5 * projects.length) + 0.5;
+
+export const ProjectsDropdown = ({ handleNavigation }: ProjectsDropdownProps) => {
+  const [wasInView, setWasInView] = useState(false);
   const [expanded, setExpanded] = useState(false);
-  const { scrollTo, hash } = useNavigation()
+  const { hash, inView } = useNavigation()
   const inProjects = useMemo(() => hash.startsWith("#projects"), [hash])
+
+  useEffect(() => {
+    const isInView = inView.some(i => i.startsWith('#projects'))
+    if (wasInView && !isInView) {
+      setExpanded(false)
+    }
+
+    setWasInView(isInView)
+  }, [wasInView, inView])
 
   useEffect(() => {
     if (inProjects) {
       setExpanded(true)
     }
   }, [inProjects])
-  
+
   return (
     <div className="flex flex-col">
       <NavLink 
         title="Projects" 
-        icon={<ChevronDownIcon className={classNames({ 'rotate-180': expanded }, 'transition-all')} />} 
+        icon={<ChevronDownIcon className={classNames({ 'rotate-180': expanded }, 'transition-all duration-500')} />} 
         disabled={inProjects}
         active={inProjects} 
         onClick={() => setExpanded(prev => !prev)}
-        className={classNames('bg-monokai-light', { 'rounded-b-none': expanded })}
+        className={classNames(
+          'bg-monokai-light ', 
+          { 'transition-all delay-1000': !expanded },
+          { 'rounded-b-none': expanded }
+        )}
       />
 
-      {expanded && (
-        <div className="flex flex-col bg-monokai-light rounded-b-md p-2 gap-2">
-          {projects.map(({ title, icon, link }) => (
-            <NavLink
-              className="bg-monokai-dark"
-              key={title}
-              title={title} 
-              icon={<img src={icon} alt="ico" />}  
-              active={hash === link}          
-              onClick={() => scrollTo(link)}
-            />
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div 
+            initial={{ height: 0 }} 
+            animate={{ height: parentHeight + 'rem' }}
+            transition={{ duration: parentDuration, delay: 0 }}
+            exit={{ height: 0, transition: { duration: parentDuration } }}
+            className="flex flex-col bg-monokai-light rounded-b-md px-2 gap-2"
+          >
+            {projects.map(({ shortName, logo, link }, i) => (
+              <motion.div 
+                key={shortName} 
+                initial={{ scale: 0 }} 
+                animate={{ scale: 1 }}
+                transition={{ duration: itemDuration, delay: (i + 1) * itemDelay }}
+                exit={{ 
+                  scale: 0, 
+                  transition: { 
+                    duration: itemDuration, 
+                    delay: (projects.length - i - 1) * itemDelay/2
+                  } 
+                }}
+              >
+                <NavLink
+                  inner
+                  className={classNames(
+                    { 'mt-2': i === 0 },
+                    { 'mb-2': i === projects.length - 1},
+                    "bg-monokai-dark"
+                  )}
+                  title={shortName} 
+                  icon={<img src={logo} alt="ico" />}  
+                  active={hash === link}          
+                  onClick={() => handleNavigation(link)}
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 };

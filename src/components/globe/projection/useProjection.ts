@@ -93,15 +93,17 @@ export function useProjection(props: ProjectionConfig) {
       select('#root')
         .append('div')
         .attr('id', 'globe-tooltip')
+        .style('height', 0)
         .style('visibility', 'hidden')
-        .style('position', 'absolute')
+        .style('position', 'fixed')
+        .style('bottom', '5px')
         .style('background-color', '#192227')
         .style('border', '1px solid black')
         .style('border-radius', '5px')
         .style('padding', '5px')
         .style('pointer-events', 'none')
         .style('z-index', 100)
-        .text('tooltip')
+        .text('')
     }
 
     const tooltip = select('#globe-tooltip')
@@ -115,7 +117,6 @@ export function useProjection(props: ProjectionConfig) {
       const target = d.target as HTMLElement
 
       if (target.classList.contains('country')) {
-
         const country = target.getAttribute('aria-label') ?? 'Unknown'
         const requests = target.getAttribute('aria-valuetext') ?? '0'
 
@@ -125,6 +126,7 @@ export function useProjection(props: ProjectionConfig) {
         tooltip.style('top', `${d.clientY + 10}px`)
       } else {
         tooltip.style('visibility', 'hidden')
+        tooltip.html('')
       }
     })
 

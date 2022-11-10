@@ -3,48 +3,51 @@ import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from './navigation/Header';
 import { Menu } from './navigation/Menu';
-import { MobileMenu } from './navigation/MobileMenu';
+import { useSwipeable } from 'react-swipeable';
+import { motion } from 'framer-motion';
 
-export const Layout = () => (
-  <>
-    <div className="hidden lg:block">
-      <DesktopLayout />
-    </div>
-    <div className="block lg:hidden">
-      <MobileLayout />
-    </div>
-  </>
-);
-
-const MobileLayout = () => {
+export const Layout = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setMenuOpen(true),
+    preventScrollOnSwipe: true
+  })
 
   return (
-    <div className={classNames(
-      "flex flex-col",
-      { 'overflow-y-hidden': menuOpen }
-    )}>
-      <Header open={menuOpen} toggle={() => setMenuOpen(prev => !prev)} />
+    <div className="flex flex-col lg:flex-row max-h-screen overflow-hidden box-border">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="hidden lg:block w-72 min-w-80 h-screen z-10 overflow-x-hidden overflow-y-auto bg-monokai-dark"
+      >
+        <Menu />
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }} 
+        className="block z-50 w-full lg:hidden"
+      >
+        <Header open={menuOpen} toggle={() => setMenuOpen(prev => !prev)} />
+      </motion.div>
+
+      <div {...handlers} className="block lg:hidden absolute top-0 right-0 h-screen w-6 z-50" />
       
-      <div className={classNames(
-        "h-[calc(100vh-4rem)] mt-16",
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className={classNames(
+        { 'overflow-y-hidden': menuOpen },
+        "h-[calc(100vh-4rem)] lg:w-[calc(100vw-18rem)] lg:h-screen overflow-y-auto overscroll-none"
       )}>
         {menuOpen && (
-          <MobileMenu />
+          <div className="bg-monokai-dark absolute w-full z-50">
+            <Menu onNavigate={() => setMenuOpen(false)} />
+          </div>
         )}
         <Outlet />
-      </div>
-    </div>
-  )
+      </motion.div>
+    </div>    
+  );
 };
-
-const DesktopLayout = () => (
-  <div className="flex">
-    <div className="w-72 min-w-80 h-screen z-10 overflow-x-hidden">
-      <Menu />
-    </div>
-    <div className="w-[calc(100vw-18rem)] h-screen overflow-y-auto">
-      <Outlet />
-    </div>
-  </div>
-);

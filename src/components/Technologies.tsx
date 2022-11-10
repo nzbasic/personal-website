@@ -8,7 +8,7 @@ interface Group {
 }
 
 interface TechnologiesProps {
-  data: Technology[]
+  data: Technology[];
 }
 
 export const Technologies = ({ data }: TechnologiesProps) => {
@@ -31,7 +31,7 @@ export const Technologies = ({ data }: TechnologiesProps) => {
   ), [data]);
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-3 w-full gap-4">
+    <div className="grid grid-cols-fill-52 w-full gap-4">
       {grouped.map(group => (
         <div key={group.title} className="flex flex-col w-full gap-2 bg-monokai-dark rounded-md p-2">
           <span className="font-semibold">{group.title}</span>
@@ -39,7 +39,7 @@ export const Technologies = ({ data }: TechnologiesProps) => {
             <div key={item.title} className="flex items-center gap-2 bg-monokai-light rounded-md p-2">
               <div className="w-[30px] h-[30px] flex items-center justify-center">
                 <img 
-                  src={require('../resources/logos/' + item.imageUrl)} 
+                  src={item.imageUrl} 
                   alt="logo" 
                   width="30" 
                   height="30" 

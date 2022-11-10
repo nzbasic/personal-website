@@ -1,121 +1,128 @@
 import { Technology, TechnologyEnjoyment } from "../types/project";
+import { contentUrl } from "./env";
 
 export const angular: Technology = { 
   title: "Angular",   
-  imageUrl: "angular.png",
+  imageUrl: contentUrl + "/logos/angular.svg",
   type: "Frontend",
 }
 
 export const cs: Technology = {
   title: "C#",
-  imageUrl: "csharp.png",
+  imageUrl: contentUrl + "/logos/csharp.png",
   type: "Fullstack",
   background: "#fff",
 }
 
 export const docker: Technology = {
   title: "Docker",
-  imageUrl: "docker.png",
+  imageUrl: contentUrl + "/logos/docker.png",
   type: "DevOps",
 }
 
 export const go: Technology = {
   title: "Go",
-  imageUrl: "go.png",
+  imageUrl: contentUrl + "/logos/go.png",
   type: "Backend",
 }
 
 export const graphql: Technology = {
   title: "GraphQL",
-  imageUrl: "graphql.png",
+  imageUrl: contentUrl + "/logos/graphql.svg",
   type: "Fullstack",
 }
 
 export const java: Technology = {
   title: "Java",
-  imageUrl: "java.png",
+  imageUrl: contentUrl + "/logos/java.svg",
   type: "Backend",
   background: "#fff",
 }
 
 export const javascript: Technology = {
   title: "JavaScript",
-  imageUrl: "javascript.png",
+  imageUrl: contentUrl + "/logos/javascript.png",
   type: "Fullstack",
 }
 
 export const kubernetes: Technology = {
   title: "Kubernetes",
-  imageUrl: "kubernetes.png",
+  imageUrl: contentUrl + "/logos/kubernetes.svg",
   type: "DevOps",
 }
 
 export const mongodb: Technology = {
   title: "MongoDB",
-  imageUrl: "mongodb.png",
+  imageUrl: contentUrl + "/logos/mongodb.png",
   type: "Database",
   background: "#fff",
 }
 
 export const nestjs: Technology = {
   title: "NestJs",
-  imageUrl: "nestjs.svg",
+  imageUrl: contentUrl + "/logos/nestjs.svg",
   type: "Backend",
 }
 
 export const nextjs: Technology = {
   title: "NextJs",
-  imageUrl: "nextjs.svg",
+  imageUrl: contentUrl + "/logos/nextjs.svg",
   type: "Frontend",
   background: "#fff",
 }
 
 export const nginx: Technology = {
   title: "Nginx",
-  imageUrl: "nginx.png",
+  imageUrl: contentUrl + "/logos/nginx.png",
   type: "DevOps",
+}
+
+export const nodejs: Technology = {
+  title: "NodeJs",
+  imageUrl: contentUrl + "/logos/nodejs.svg",
+  type: "Backend",
 }
 
 export const python: Technology = {
   title: "Python",
-  imageUrl: "python.jpg",
+  imageUrl: contentUrl + "/logos/python.svg",
   type: "Backend",
   background: "#fff",
 }
 
 export const react: Technology = {
   title: "React",
-  imageUrl: "react.png",
+  imageUrl: contentUrl + "/logos/react.svg",
   type: "Frontend",
 }
 
 export const sqlite: Technology = {
   title: "SQLite",
-  imageUrl: "sqlite.png",
+  imageUrl: contentUrl + "/logos/sqlite.svg",
   type: "Database",
 }
 
 export const tailwindcss: Technology = {
   title: "TailwindCSS",
-  imageUrl: "tailwind.png",
+  imageUrl: contentUrl + "/logos/tailwind.svg",
   type: "Frontend",
 }
 
 export const typescript: Technology = {
   title: "TypeScript",
-  imageUrl: "typescript.png",
+  imageUrl: contentUrl + "/logos/typescript.svg",
   type: "Fullstack",
 }
 
 export const electron: Technology = {
   title: "Electron",
-  imageUrl: "electron.png",
+  imageUrl: contentUrl + "/logos/electron.svg",
   type: "Backend",
 }
 
 export const r2: Technology = {
   title: "Cloudflare R2",
-  imageUrl: "cloudflare.png",
+  imageUrl: contentUrl + "/logos/cloudflare.png",
   type: "Database",
 }
 
@@ -139,8 +146,8 @@ export const data: TechnologyEnjoyment[] = [
   },
   {
     ...go,
-    experience: 60,
-    enjoyment: 70,
+    experience: 65,
+    enjoyment: 75,
     circle: true,
   },
   {
@@ -151,13 +158,13 @@ export const data: TechnologyEnjoyment[] = [
   },
   {
     ...java,
-    experience: 50,
-    enjoyment: 70,
+    experience: 70,
+    enjoyment: 60,
   },
   {
    ...javascript,
     experience: 100,
-    enjoyment: 20,
+    enjoyment: 50,
   },
   {
     ...kubernetes,
@@ -178,8 +185,8 @@ export const data: TechnologyEnjoyment[] = [
   },
   {
     ...nextjs,
-    experience: 50,
-    enjoyment: 20,
+    experience: 55,
+    enjoyment: 65,
   },
   {
     ...nginx,
@@ -187,10 +194,15 @@ export const data: TechnologyEnjoyment[] = [
     enjoyment: 70,
     circle: true,
   },
+  { 
+    ...nodejs,
+    experience: 90,
+    enjoyment: 70,
+  },
   {
     ...python,
     experience: 60,
-    enjoyment: 10,
+    enjoyment: 20,
   },
   {
     ...react,

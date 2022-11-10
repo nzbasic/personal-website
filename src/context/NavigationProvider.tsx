@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 
 interface Navigation {
+  pageLoadHash: string;
   inView: string[];
   enterView: (hash: string) => void;
   exitView: (hash: string) => void;
@@ -12,6 +13,7 @@ interface Navigation {
 }
 
 const defaultContext: Navigation = {
+  pageLoadHash: window.location.hash,
   inView: [],
   enterView: () => null,
   exitView: () => null,
@@ -48,7 +50,11 @@ const NavigationProvider = ({ children }: any) => {
   const scrollTo = useCallback((hash: string) => {
     const el = document.getElementById(hash)
     if (el) {
-      window.scrollTo(0, el.offsetTop + 100)
+      if (hash.includes('about')) {
+        window.scrollTo(0, 0)
+      } else {
+        window.scrollTo(0, el.offsetTop)
+      }
       el.scrollIntoView({ behavior: 'smooth' });
     }
   }, []);
@@ -63,7 +69,7 @@ const NavigationProvider = ({ children }: any) => {
 
   return (
     <NavigationContext.Provider
-      value={{ hash, title, scrollTo, inView, enterView, exitView }}
+      value={{ pageLoadHash: defaultContext.pageLoadHash, hash, title, scrollTo, inView, enterView, exitView }}
     >
       {children}
     </NavigationContext.Provider>
