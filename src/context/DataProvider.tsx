@@ -68,7 +68,6 @@ const DataProvider = ({ children }: any) => {
         setTimeout(() => setLoaded(true), 1000)
       })
       .catch((err) => {
-        console.log(err)
         setTimeout(() => setLoaded(true), 1000)
       })
   }, [])
