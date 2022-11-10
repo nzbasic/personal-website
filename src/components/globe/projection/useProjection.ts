@@ -96,7 +96,7 @@ export function useProjection(props: ProjectionConfig) {
         .style('height', 0)
         .style('visibility', 'hidden')
         .style('position', 'fixed')
-        .style('bottom', '5px')
+        .style('bottom', '50px')
         .style('background-color', '#192227')
         .style('border', '1px solid black')
         .style('border-radius', '5px')
@@ -122,10 +122,14 @@ export function useProjection(props: ProjectionConfig) {
 
         tooltip.html(`Country: ${country}<br>Requests: ${requests}`)
         tooltip.style('visibility', 'visible')
+        tooltip.style('bottom', null)
+        tooltip.style('height', null)
         tooltip.style('left', `${d.clientX + 10}px`)
         tooltip.style('top', `${d.clientY + 10}px`)
       } else {
         tooltip.style('visibility', 'hidden')
+        tooltip.style('bottom', '50px')
+        tooltip.style('height', 0)
         tooltip.html('')
       }
     })
