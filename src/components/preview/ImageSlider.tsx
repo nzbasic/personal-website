@@ -31,7 +31,7 @@ export const ImageSlider = ({ images }: ImageSliderProps) => {
         {images.map((image, index) => (
           <div key={image} className={`relative rounded-xl flex flex-col keen-slider__slide number-slide${index}`}>
             <div className="rounded-xl w-full h-full">
-              <img loading="lazy" src={image} alt={image} className={`w-auto`} width={1280} height={720} />
+              <img loading="lazy" src={image} alt={imageToTitle(image)} className="w-auto bg-monokai-dark text-white" width={1280} height={720} />
             </div>
             <Glass className="text-sm absolute bottom-10 p-2">{imageToTitle(image)}</Glass>
           </div>
