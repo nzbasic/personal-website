@@ -67,7 +67,7 @@ export const bbd: Project = {
     },
     {
       title: "Achievements",
-      type: "text",
+      type: "bullet",
       content: [
         "Serving over 1.5TB of data in a single day",
         "Serving over 2 million beatmap sets in a month",
@@ -77,7 +77,7 @@ export const bbd: Project = {
     },
     {
       title: "Takeaways",
-      type: "text",
+      type: "bullet",
       content: [
         "Cloud egress data rates are extremely expensive.",
         "Hosting yourself and building a server rack is really fun.",
