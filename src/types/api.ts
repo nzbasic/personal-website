@@ -7,21 +7,22 @@ export interface DownloadMetrics {
   CurrentDownloads: CurrentDownload[]
   DailyStats: DailyDownloadStats
   CurrentBandwidthUsage: number
+  AverageSpeedMinute: number;
 }
 
 export interface CurrentDownload {
-  Id: number
-  TotalSize: number
-  Ended: boolean
-  RemainingSize: number
-  AverageSpeed: number
-  EstTimeLeft: number
+  Size: number;
+  Progress: number;
+  Speed: number;
+  Active: boolean;
+  Finished: boolean;
 }
 
 export interface DailyDownloadStats {
   Maps: number
   Size: number
   Speed: number
+  Completed: number;
 }
 
 export interface DatabaseMetrics {
